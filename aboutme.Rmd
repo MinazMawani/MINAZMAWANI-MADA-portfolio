@@ -8,3 +8,35 @@ output:
 
 Add some text and a figure describing myself.
 
+**About Me**
+
+Hello, my name is Minaz Mawani. I am a Fulbright Scholar from Pakistan and a third year PhD Epidemiology student at University of Georgia College of Public Health. Currently working with Dr. Ebell conducting a systematic review and developing my dissertation protocol. 
+
+![](C:/Users/meena/Desktop/GitHubMMrepo/MADA/MINAZMAWANI-MADA-portfolio/mmpic.jpg)
+ 
+ 
+**My Background**
+
+My career in health care started with a B.S in Nursing in 2007 from Aga Khan University in Pakistan followed by training in critical care nursing from George Brown College Ontario, Canada. I worked for Cardiology Medicine and Cardiac ICU for four years as a Critical Care Nurse, team lead and an auditor. During my clinical experience, I worked with both adults as well as pediatrics post cardiac surgery patients. I have taken care of kids as young as a few days’ old dependent on multiple lifesaving drugs and devices. Caring for critically ill patients, right from the time they are dependent on devices and lifesaving medications until they get better and go home was not only an extremely satisfying experience, but it made me a very vigilant and dedicated professional. I also had a chance to mentor and teach in clinical as well as academic settings. 
+During clinical experience, I developed interest towards public health and research. I wanted to broaden the scope of my work from individuals in cardiac ICU to populations through contribution towards knowledge in the field. We started developing a research project, where I realized the need for formal training in epidemiology and biostatistics. Therefore, I pursued a master’s degree and was awarded a fellowship in acute care and trauma research in collaboration with Fogarty-NIH and Johns Hopkins Bloomberg School of Public Health. My Master’s thesis focused on examining the epidemiology and outcomes of Out-of-Hospital Cardiac Arrest in Karachi, Pakistan which was the first large scale study reporting the burden and survival outcomes from Pakistan. Following Masters and Fellowship, I joined academia and worked for five years doing research and teaching. Later, my curiosity and zest for advance knowledge in Epidemiology and Statistics brought me here at UGA. 
+
+**Research Interests**
+
+My research interests include Cardiometabolic risk factors and outcomes, prehospital emergency management and out of hospital cardiac arrest. I have a few published and yet to be published research studies in peer reviewed journals. Here is my research profile https://www.researchgate.net/profile/Minaz-Mawani/research. For my dissertation I would focus on improving survival outcomes of out of hospital cardiac arrest in United States. 
+Experience with data analysis 
+I have come a long way from being used to a point and click use of analysis software such as SPSS for years and then having to learn SAS and R during first year of PhD. However, over time, I just fell in love with coding, and I enjoy using SAS more than R. I still have a lot to learn in R. I am very excited to be a part of this course and learn all the sophisticated analyses such as machine learning and software like GitHub for efficient storage and workflow. I have also been developing interest in learning python and Weka. 
+
+**Hobbies**
+
+I love sketching, acrylic painting, traveling, exploring nature, bird watching, Movies; Sci-Fi and Rom-coms 
+
+
+**Fun facts**
+
+-	I have done snorkeling in Maldives. Underwater life is so pretty and peaceful 
+-	I went for a penguin experience in sea world Orlando hoping to just stand by the penguin and get a picture. I was hugged by a penguin, and it was the cutest moment of my life
+
+
+This is something i saw about machine learning and thought it was funny
+![](https://images.app.goo.gl/3xmcoyvpqkFWheFv5)
+
