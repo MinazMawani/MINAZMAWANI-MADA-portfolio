@@ -1,10 +1,143 @@
 ---
 title: "R coding Exercise"
-output: 
+output:
   html_document:
     toc: FALSE
 ---
 
 This will contain the future R coding exercise.
 
+#Loading the dslabs package 
+```{r}
+library(dslabs)
+```
 
+#pulling up the help page for gapminder to see what it contains
+```{r}
+help(gapminder)
+```
+
+#Look at gapminder data structure
+```{r}
+str(gapminder)
+```
+
+#Obtain a summary of gapminder data
+```{r}
+summary(gapminder)
+```
+#check what class is gapminder data
+```{r}
+class(gapminder)
+```
+#Loading the dplyr package 
+```{r}
+library(dplyr)
+```
+#assigning African Countries to a new object
+```{r}
+africadata <- subset(gapminder, continent == "Africa")
+```
+#look at data structure of "africadata"
+```{r}
+str(africadata)
+```
+
+#Obtain a summary of "africadata"
+```{r}
+summary(africadata)
+```
+
+#developing new variable containing infant mortality and life expectancy
+```{r}
+Infantmortality <- select(africadata, infant_mortality, life_expectancy)
+```
+#developing new variable containing population and life expectancy
+```{r}
+Population <- select(africadata, population, life_expectancy)
+```
+
+#Look at the data structure and summary of two newly developed variables
+```{r}
+str(Infantmortality)
+
+summary(Infantmortality)
+
+str(Population)
+
+summary(Population)
+```
+#loading the ggplot2 package
+```{r}
+library(ggplot2)
+```
+
+#developing plot of life expectancy as a function of infant mortality
+```{r}
+ggplot(data = Infantmortality) + 
+  geom_point(mapping = aes(x = infant_mortality, y = life_expectancy))
+```
+
+#developing plot of life expectancy as a function of population size  
+
+```{r}
+plot2 <- ggplot(data = Population) + 
+  geom_point(mapping = aes(x = population, y = life_expectancy))
+```
+
+#setting the x-axis to a log scale   
+```{r}
+plot2 + scale_x_continuous(trans='log2')
+
+```
+#checking missing data for infant mortality
+```{r}
+sum(is.na(africadata$infant_mortality))
+```
+
+#extracting data for only year 2000
+```{r}
+data2000 <- subset(africadata, year == "2000")
+```
+
+#checking structure of data from year 2000
+```{r}
+str(data2000)
+```
+
+#obtaining summary of data from year 2000
+```{r}
+summary(data2000)
+```
+
+#ploting the relationship between infant mortality and life expectancy
+```{r}
+ggplot(data = data2000) + 
+  geom_point(mapping = aes(x = infant_mortality, y = life_expectancy))
+```
+
+#plotting the relationship between population size and life expectancy  
+```{r}
+plot2 <- ggplot(data = data2000) + 
+  geom_point(mapping = aes(x = population, y = life_expectancy))
+```
+
+#changing x-axis scale to log  
+```{r}
+plot2 + scale_x_continuous(trans='log2')
+```
+
+#fitting a linear model between infant mortality vs. life expectancy and population size vs. life expectancy
+```{r}
+fit1 = lm(data = data2000, life_expectancy ~ infant_mortality)
+
+fit2 = lm(data = data2000, life_expectancy ~ population)
+```
+
+#obtaining fit results for both the models 
+```{r}
+summary(fit1)
+
+summary(fit2)
+```
+# based on the p-values of the two models we conclude that there is a statistically significant inverse relationship between infant mortality and life expectancy. whereas there is no clear relationship between population size and life expectancy
