@@ -141,3 +141,55 @@ summary(fit1)
 summary(fit2)
 ```
 # based on the p-values of the two models we conclude that there is a statistically significant inverse relationship between infant mortality and life expectancy. whereas there is no clear relationship between population size and life expectancy
+
+### New Section: Amanda Glatter   
+### Additional Plots
+### Create a scatterplot to compare fertility and life expectancy in Africa in 2000.
+```{r}
+flplot <- ggplot(data = data2000) + geom_point(mapping = aes(x = fertility, y = life_expectancy)) + xlab("Fertility") + ylab("Life Expectancy") + ggtitle("Life Expectancy vs. Fertility in African Countries in 2000")
+
+print(flplot)
+```
+
+### Is this relationship statistically significant?
+```{r}
+fit3 <- lm(fertility ~ life_expectancy, data = data2000)
+summary(fit3)
+```
+
+
+### Based on fit3, there is a statistically significant relationship between fertility and life expectancy in Africa in 2000.
+
+
+
+## Let's take a closer look at life expectancy vs. infant mortality on a different continent and see if the relationship is still significant in 2000. In this case, we will look at Asia.  
+
+
+```{r}
+asiadata <- gapminder %>% subset(continent == "Asia")
+asia_life <- asiadata%>% filter(year==2000)
+asia_lifeplot <- asia_life %>% ggplot(aes(x=infant_mortality, y=life_expectancy)) + geom_point() + ggtitle("Life Expectancy vs. Infant Mortality in Asia in 2000") + xlab("Infant Mortality") + ylab("Life Expectancy")
+print(asia_lifeplot)
+```
+```{r}
+fit_asia <- lm(infant_mortality~life_expectancy, data=asia_life)
+summary(fit_asia)
+```
+### Like for the African country data in 2000, Asian countries show a significant relationship between life expectancy and infant mortality in 2000 (p<2.2e-16).
+
+
+### For fun, let's break down how life expectancy changes over time, but let's break this information down by region of Africa.  
+
+```{r}
+northern <- africadata %>% select(year, country, life_expectancy, region) %>% filter(region == "Northern Africa") %>% ggplot(aes(x = year, y = life_expectancy, color = country)) + geom_point() + xlab("Year") + ylab("Life Expectancy")  + ggtitle("Life Expectancy over Time in Northern Africa")
+print(northern)
+
+southern <- africadata %>% select(year, country, life_expectancy, region) %>% filter(region == "Southern Africa") %>% ggplot(aes(x = year, y = life_expectancy, color = country)) + geom_point() + xlab("Year") + ylab("Life Expectancy") + ggtitle("Life Expectancy over Time in Southern Africa")
+print(southern)
+
+western <- africadata %>% select(year, country, life_expectancy, region) %>% filter(region == "Western Africa") %>% ggplot(aes(x = year, y = life_expectancy, color = country)) + geom_point() + xlab("Year") + ylab("Life Expectancy") + ggtitle("Life Expectancy over Time in Western Africa")
+print(western)
+
+eastern <- africadata %>% select(year, country, life_expectancy, region) %>% filter(region == "Eastern Africa") %>% ggplot(aes(x = year, y = life_expectancy, color = country)) + geom_point() + xlab("Year") + ylab("Life Expectancy") + ggtitle("Life Expectancy over Time in Eastern Africa")
+print(eastern)
+```
